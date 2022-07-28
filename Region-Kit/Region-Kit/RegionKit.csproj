@@ -26,18 +26,28 @@
   </PropertyGroup>
   <ItemGroup>
     <!--Code-->
-    <Compile Include="Shaders.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Shaders.resx</DependentUpon>
-    </Compile>
     <Compile Include="ExtraPOM\Vector2ArrayField.cs" />
-    <Compile Include="*.cs" />
+    <Compile Include="ArenaFixes.cs" />
+    <Compile Include="ARKillRect.cs" />
+    <Compile Include="CustomArenaDivisions.cs" />
+    <Compile Include="ExtendedGates.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="INotifyWhenRoomIsViewed.cs" />
+    <Compile Include="IsExternalInit.cs" />
+    <Compile Include="ManagedObjectExamples.cs" />
+    <Compile Include="NewObjects.cs" />
+    <Compile Include="PlacedObjectsManager.cs" />
+    <Compile Include="RainbowNoFade.cs" />
+    <Compile Include="RegionKitMod.cs" />
+    <Compile Include="RK_APOFSFix.cs" />
+    <Compile Include="RoomLoader.cs" />
     <Compile Include="Shaders.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Shaders.resx</DependentUpon>
     </Compile>
+    <Compile Include="SunBlockerFix.cs" />
+    <Compile Include="SuperstructureFusesFix.cs" />
     <Compile Include="TheMast\Localization\*.cs" />
     <Compile Include="ConditionalEffects\*.cs" />
     <Compile Include="ConcealedGarden\*.cs" />
@@ -50,23 +60,24 @@
     <Compile Include="TheMast\*.cs" />
     <Compile Include="Sprites\*.cs" />
     <Compile Include="MiscPO\*.cs" />
-	<Compile Include="Utils\*.cs" />
+    <Compile Include="Utils\*.cs" />
     <Compile Include="SBeh\*.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <!-- ER -->
-	<EmbeddedResource Include="Atlases\*" />
+    <EmbeddedResource Include="Atlases\*" />
     <EmbeddedResource Include="Atlases\*\*" />
     <EmbeddedResource Include="Shaders.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Shaders.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TheMast\Atlases\TheMast.png" />
     <EmbeddedResource Include="TheMast\Atlases\TheMast.txt" />
     <EmbeddedResource Include="TheMast\Localization\Strings.resx" />
     <EmbeddedResource Include="Sprites\spinningFan.png" />
-    <EmbeddedResource Include="Resources\*.txt" />
+    <EmbeddedResource Include="Resources\CSLDesc.txt" />
   </ItemGroup>
   <ItemGroup>
     <!-- other stuff -->
@@ -81,9 +92,12 @@
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FogOfWar.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-	<RunPostBuildEvent>Always</RunPostBuildEvent>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
     <PostBuildEvent>if defined RWMods (copy /Y "$(TargetPath)" "%25RWMods%25")</PostBuildEvent>
   </PropertyGroup>
 </Project>
